@@ -11,6 +11,7 @@ conexion.connect(function(err) {
         throw err;
     }else{
         console.log('Conexion exitosa !!!');
+        console.log('hola');
     }
 });
 module.exports= { conexion };
