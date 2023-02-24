@@ -114,3 +114,4 @@ route.put('/:codigo',async function(req,res) {
  });
 
  module.exports = route
+

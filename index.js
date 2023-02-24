@@ -15,6 +15,7 @@ const empleado=require('./rutas/empleado')
 const pagos=require('./rutas/pagos')
 const persona=require('./rutas/persona')
 const productos=require('./rutas/productos')
+const acceso=require('./rutas/acceso')
 
 
 
@@ -27,6 +28,7 @@ app.use('/pago',pagos);
 app.use('/person',persona);
 app.use('/produc',productos);
 app.use('/login',login);
+app.use('/acceso',acceso);
 
 
 const puerto = 3000
