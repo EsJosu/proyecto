@@ -92,7 +92,7 @@ route.put('/:codigo',async function(req,res) {
     let id = req.body.id_persona;
     let es = req.body.estado;
     let sql = 'Update login set clave=?, id_persona=?, estado=?  where usuario=?';
-    conexion.query(sql,[cla,id,es,fe,usu,codigo],function(err,resul){
+    conexion.query(sql,[cla,id,es,codigo],function(err,resul){
         if(err){
             console.log(err.message);
 
