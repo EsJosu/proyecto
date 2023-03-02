@@ -4,7 +4,7 @@ const route= express.Router();
 
 
 route.get('/',(req, res) => {
-    let sql = "Select Id_empleado,Cargo,Sueldo,Id_persona from empleado;"
+    let sql = "Select Id_empleado,Apellido,Edad,Direccion,Genero,Cargo from empleado;"
     
     conexion.query(sql, (err, resul) => {
         if(err) {
@@ -17,7 +17,7 @@ route.get('/',(req, res) => {
 });
 
 route.get('/:codigo',function(req,res) {
-    let sql = 'Select Id_empleado,Cargo,Sueldo,Id_persona from empleado where Id_empleado=?'
+    let sql = 'Select Id_empleado,Apellido,Edad,Direccion,Genero,Cargo from empleado where Id_empleado=?'
     conexion.query(sql,[req.params.codigo],function(err,resul){
         if(err){
             throw response.json(err.message)
@@ -29,9 +29,11 @@ route.get('/:codigo',function(req,res) {
 
 route.post('/',function(req,res) {
     let data = {
-                Cargo:req.body.Cargo,
-                Sueldo:req.body.Sueldo,
-                Id_persona:req.body.Id_persona
+                Apellido:req.body.Apellido,
+                Edad:req.body.Edad,
+                Direccion:req.body.Direccion,
+                Genero:req.body.Genero,
+                Cargo:req.body.Cargo
             }
     let sql = 'Insert into empleado set ?';
     conexion.query(sql,data, function(err,resul){
@@ -41,7 +43,7 @@ route.post('/',function(req,res) {
             throw response.json(err.message)
         }else{
             res.json(resul);
-            console.log('Positiva, se adiciono');
+            console.log('Positivo, se adiciono');
         }
     });
 });
@@ -49,11 +51,13 @@ route.post('/',function(req,res) {
 
 route.put('/:codigo',function(req,res) {
     let codigo = req.params.codigo;
+    let Apellido = req.body.Apellido;
+    let Edad= req.body.Edad;
+    let Direccion= req.body.Direccion;
+    let Genero= req.body.Genero;
     let Cargo = req.body.Cargo;
-    let Sueldo = req.body.Sueldo;
-    let Id_persona= req.body.Id_persona;
-    let sql = 'Update empleado set Cargo = ?, Sueldo=?, Id_persona=? where Id_empleado = ?';
-    conexion.query(sql,[Cargo,Sueldo,Id_persona,codigo],function(err,resul){
+    let sql = 'Update empleado set Apellido = ?, Genero=?, Direccion=?, Genero=?, Cargo=? where Id_empleado = ?';
+    conexion.query(sql,[Apellido,Edad,Direccion,Genero,Cargo,codigo],function(err,resul){
         if(err){
             console.log(err.message);
         }else{

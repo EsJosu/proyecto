@@ -20,13 +20,13 @@ const acceso=require('./rutas/acceso')
 
 
 
-app.use('/categoria',categoria);
-app.use('/cli',cliente);
-app.use('/compra',compras);
-app.use('/emp',empleado);
-app.use('/pago',pagos);
-app.use('/person',persona);
-app.use('/produc',productos);
+app.use('/categoria',test,categoria);
+app.use('/cli',test,cliente);
+app.use('/compra',test,compras);
+app.use('/emp',test,empleado);
+app.use('/pago',test,pagos);
+app.use('/person',test,persona);
+app.use('/produc',test,productos);
 app.use('/login',login);
 app.use('/acceso',acceso);
 

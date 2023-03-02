@@ -4,7 +4,7 @@ const route= express.Router();
 
 
 route.get('/',(req, res) => {
-    let sql = "Select Id_cli,Nit,Id_persona from clientes;"
+    let sql = "Select Id_cli,Nit from clientes;"
     
     conexion.query(sql, (err, resul) => {
         if(err) {
@@ -17,7 +17,7 @@ route.get('/',(req, res) => {
 });
 
 route.get('/:codigo',function(req,res) {
-    let sql = 'Select Id_cli,Nit,Id_persona from clientes where Id_cli=?'
+    let sql = 'Select Id_cli,Nit from clientes where Id_cli=?'
     conexion.query(sql,[req.params.codigo],function(err,resul){
         if(err){
             throw response.json(err.message)
@@ -29,8 +29,7 @@ route.get('/:codigo',function(req,res) {
 
 route.post('/',function(req,res) {
     let data = {
-                Nit:req.body.Nit,
-                Id_persona:req.body.Id_persona
+                Nit:req.body.Nit
             }
     let sql = 'Insert into clientes set ?';
     conexion.query(sql,data, function(err,resul){
@@ -49,8 +48,8 @@ route.post('/',function(req,res) {
 route.put('/:codigo',function(req,res) {
     let codigo = req.params.codigo;
     let Nit = req.body.Nit;
-    let Id_persona = req.body.Id_persona;
-    let sql = 'Update clientes set Nit = ?, Id_persona=? where Id_cli = ?';
+
+    let sql = 'Update clientes set Nit = ? where Id_cli = ?';
     conexion.query(sql,[Nit,Id_persona,codigo],function(err,resul){
         if(err){
             console.log(err.message);
