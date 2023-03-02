@@ -1,10 +1,11 @@
 const express = require('express');
+const { conexion } = require('../configuracion/database');
+const route= express.Router();
 
-const route = express.Router()
-const {conexion} = require ('../configuracion/database')
 
 route.get('/',(req, res) => {
-    let sql = "Select Id_pago,Id_cli,Id_empleado,date_format(Fecha_pago,'%d-%m-%Y') As Fecha_pago,Monto,Tipo from pagos;"
+    let sql = "Select Id_factura,Id_cli,Id_empleado,tipoDocumento,numDocumento,Fecha from factura;"
+    
     conexion.query(sql, (err, resul) => {
         if(err) {
             console.log("Error: "+err.message);
@@ -16,7 +17,7 @@ route.get('/',(req, res) => {
 });
 
 route.get('/:codigo',function(req,res) {
-    let sql = 'Select Id_pago,Id_cli,Id_empleado,Fecha_pago,Monto,Tipo from pagos where id_pago=?'
+    let sql = 'Select Id_factura,Id_cli,Id_empleado,tipoDocumento,numDocumento,Fecha from factura where Id_factura=?'
     conexion.query(sql,[req.params.codigo],function(err,resul){
         if(err){
             throw response.json(err.message)
@@ -27,49 +28,52 @@ route.get('/:codigo',function(req,res) {
 });
 
 route.post('/',function(req,res) {
-    let data = {Id_cli:req.body.Id_cli,Id_empleado:req.body.Id_empleado,Fecha_pago:req.body.Fecha_pago,Monto:req.body.Monto,Tipo:req.body.Tipo}
-    let sql = 'Insert into pagos set ?';
+    let data = {
+        Id_cli:req.body.Id_cli,
+        Id_empleado:req.body.Id_empleado,
+        tipoDocumento:req.body.tipoDocumento,
+        numDocumento:req.body.numDocumento
+            }
+    let sql = 'Insert into factura set ?';
     conexion.query(sql,data, function(err,resul){
         if(err){
             console.log(err.message);
-            res.send('Error no se adiciono');
+            res.json('Error no se adiciono');
             throw response.json(err.message)
         }else{
             res.json(resul);
-            console.log('Datos adicionados');
+            console.log('Positivo, se adiciono');
         }
     });
 });
 
+
 route.put('/:codigo',function(req,res) {
     let codigo = req.params.codigo;
-    let idcli = req.body.Id_cli;
-    let idemp = req.body.Id_empleado;
-    let fecha = req.body.Fecha_pago;
-    let mon = req.body.Monto;
-    let tip = req.body.Tipo;
-    let sql = 'Update pagos set Id_cli = ?, Id_empleado=?, Fecha_pago=?, Monto=?,Tipo=? where Id_pago = ?';
-    conexion.query(sql,[idcli,idemp,fecha,mon,tip,codigo],function(err,resul){
+    let Idcli= req.body.Id_cli;
+    let Idemp= req.body.Id_empleado;
+    let tip= req.body.tipoDocumento;
+    let num= req.body.numDocumento;
+   
+    let sql = 'Update factura set Id_cli = ?, Id_empleado=?, tipoDocumento=?, numDocumento=? where Id_factura = ?';
+    conexion.query(sql,[Idcli,Idemp,tip,num,codigo],function(err,resul){
         if(err){
             console.log(err.message);
-            
         }else{
             res.json(resul);
         }
     });
  });
-
  route.delete('/:codigo',function(req,res) {
     let codigo = req.params.codigo;
-    let sql = 'Delete from pagos where id_pago = ?';
+    let sql = 'Delete from factura where Id_factura = ?';
     conexion.query(sql,[codigo],function(err,resul){
         if(err){
             console.log(err.message);
-            
         }else{
             res.json(resul);
         }
     });
  });
 
-module.exports=route
+module.exports =  route ;
