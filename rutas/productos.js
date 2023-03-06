@@ -15,6 +15,70 @@ route.get('/',(req, res) => {
         }
     });
 });
+//lacteos
+route.get('/lacteos',(req, res) => {
+    let sql = "Select Nombre,Descripcion,Precio,Imagen from productos where Id_cat='1';"
+    conexion.query(sql, (err, resul) => {
+        if(err) {
+            console.log("Error: "+err.message);
+            throw err
+        }else{
+            res.json(resul)
+        }
+    });
+});
+
+//panaderia
+route.get('/panaderia',(req, res) => {
+    let sql = "Select Nombre,Precio,Imagen from productos where Id_cat='2';"
+    conexion.query(sql, (err, resul) => {
+        if(err) {
+            console.log("Error: "+err.message);
+            throw err
+        }else{
+            res.json(resul)
+        }
+    });
+});
+
+//bebidas
+route.get('/bebidas',(req, res) => {
+    let sql = "Select Nombre,Descripcion,Precio,Imagen from productos where Id_cat='3';"
+    conexion.query(sql, (err, resul) => {
+        if(err) {
+            console.log("Error: "+err.message);
+            throw err
+        }else{
+            res.json(resul)
+        }
+    });
+});
+
+//snacks
+route.get('/snacks',(req, res) => {
+    let sql = "Select Nombre,Descripcion,Precio,Imagen from productos where Id_cat='4';"
+    conexion.query(sql, (err, resul) => {
+        if(err) {
+            console.log("Error: "+err.message);
+            throw err
+        }else{
+            res.json(resul)
+        }
+    });
+});
+
+//enlatados
+route.get('/enlatados',(req, res) => {
+    let sql = "Select Nombre,Descripcion,Precio,Imagen from productos where Id_cat='5';"
+    conexion.query(sql, (err, resul) => {
+        if(err) {
+            console.log("Error: "+err.message);
+            throw err
+        }else{
+            res.json(resul)
+        }
+    });
+});
 
 route.get('/:codigo',function(req,res) {
     let sql = 'Select Id_prod,Nombre,Descripcion,Precio,Cantidad,Id_cat from productos where Id_prod=?'

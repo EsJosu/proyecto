@@ -24,7 +24,7 @@ app.use('/categoria',categoria);
 app.use('/factura',factura);
 app.use('/det',detalle_factura);
 app.use('/person',persona);
-app.use('/produc',productos);
+app.use('/productos',productos);
 app.use('/login',login);
 app.use('/acceso',acceso);
 app.use('/reporte',reporte);
