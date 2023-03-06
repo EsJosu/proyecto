@@ -28,7 +28,8 @@ route.post('/',function(req,res) {
               if(err){
                   console.log("error");
               }else{
-                  res.json(token);
+
+                  res.json({token:token});
               }
            });
        

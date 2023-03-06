@@ -5,10 +5,10 @@ const jwt= require('jsonwebtoken')
 const {jwt_secret}= require('../configuracion/parametro');
 
 const test = function(req,res,next){
-    console.log('Holas estas apunto de crear un sukulento middlewires');
+    console.log('Hola estas creando un middlewire');
     let tok = req.get('Authorization');
     if(!tok){
-        res.json('error, eres un usuario wey')
+        res.json('error por identificacion de token')
     }else{       
          jwt.verify(tok,jwt_secret, function(err,datos){
         if(err) {

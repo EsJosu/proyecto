@@ -4,7 +4,7 @@ const route= express.Router();
 
 
 route.get('/',(req, res) => {
-    let sql = "Select Id_factura,Id_cli,Id_empleado,tipoDocumento,numDocumento,Fecha from factura;"
+    let sql = "Select Id_factura,Id_persona,tipoDocumento,numDocumento,Fecha from factura;"
     
     conexion.query(sql, (err, resul) => {
         if(err) {
@@ -17,7 +17,7 @@ route.get('/',(req, res) => {
 });
 
 route.get('/:codigo',function(req,res) {
-    let sql = 'Select Id_factura,Id_cli,Id_empleado,tipoDocumento,numDocumento,Fecha from factura where Id_factura=?'
+    let sql = 'Select Id_factura,Id_persona,tipoDocumento,numDocumento,Fecha from factura where Id_factura=?'
     conexion.query(sql,[req.params.codigo],function(err,resul){
         if(err){
             throw response.json(err.message)
@@ -29,8 +29,7 @@ route.get('/:codigo',function(req,res) {
 
 route.post('/',function(req,res) {
     let data = {
-        Id_cli:req.body.Id_cli,
-        Id_empleado:req.body.Id_empleado,
+        Id_persona:req.body.Id_persona,
         tipoDocumento:req.body.tipoDocumento,
         numDocumento:req.body.numDocumento
             }
@@ -50,13 +49,12 @@ route.post('/',function(req,res) {
 
 route.put('/:codigo',function(req,res) {
     let codigo = req.params.codigo;
-    let Idcli= req.body.Id_cli;
-    let Idemp= req.body.Id_empleado;
+    let Idper= req.body.Id_persona;
     let tip= req.body.tipoDocumento;
     let num= req.body.numDocumento;
    
-    let sql = 'Update factura set Id_cli = ?, Id_empleado=?, tipoDocumento=?, numDocumento=? where Id_factura = ?';
-    conexion.query(sql,[Idcli,Idemp,tip,num,codigo],function(err,resul){
+    let sql = 'Update factura set Id_persona = ?,  tipoDocumento=?, numDocumento=? where Id_factura = ?';
+    conexion.query(sql,[Idper,tip,num,codigo],function(err,resul){
         if(err){
             console.log(err.message);
         }else{
