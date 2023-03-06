@@ -24,25 +24,25 @@
   </button>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item ">
-        <a class="nav-link" href="usuario.html">Usuario</a>
-      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="lacteos.html"><b>Categorias</b> <span class="sr-only">(current)</span></a>
+  </li>
       
-      <li class="nav-item">
-        <a class="nav-link" href="persona.html">persona</a>
-      </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="#"><b>Categorias</b> <span class="sr-only">(current)</span></a>
-      </li>
-            <li class="nav-item">
-        <a class="nav-link" href="factura.html">factura</a>
-      </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="usuario.html">Usuario</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="persona.html">Persona</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="factura.html">Factura</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./acerca.html"><i>Acerca de</i></a>
+  </li>
 
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
+
   </div>
 </nav>
 <figure class="text-center">
@@ -55,39 +55,46 @@
     <div id="grafico"></div>
     <script src="../routes/reporte.js"></script>
  
- <!-- Pie de pagina -->
-<br>
-<div class="center">
-<div class="jumbotron center">
-  <h1 class="display-4" id="titulo1">Supermercados Mercadona</h1>
-  <p class="lead" id="descripcion1">Venta de productos, porductos lacteos, gaseosas, snacks, abarrotes, pasteles y mas productos se pueden comprar desde su supermercado Mercadona</p>
-  <hr class="my-4">
-  <p>Buscanos y contactate con nosotros </p>
-  <div class="container">
-    <a href="https://www.facebook.com/mercadona/?locale=es_LA" class="icons facebook">
-      <span class="imgs">
-        <i class="fab fa-facebook-f"></i>
-      </span>
-    </a>
-    <a href="https://twitter.com/Mercadona" class="icons twitter">
-      <span class="imgs">
-        <i class="fab fa-twitter"></i>
-      </span>
-    </a>
-    <a href="https://www.instagram.com/mercadona/?hl=es" class="icons instagram">
-      <span class="imgs">
-        <i class="fab fa-instagram"></i>
-      </span>
-    </a>
-    <a href="https://www.youtube.com/@mercadona" class="icons youtube">
-      <span class="imgs">
-        <i class="fab fa-youtube"></i>
-      </span>
-    </a>
+ <!-- PIE DE PAGINA -->
+<footer class ="pie-pagina">
+  <div class="group-1">
+    <div class="box">
+      <figure>
+        <a href="#">
+          <img src="../public/img/3.jpg" height="220" alt="">
+        </a>
+      </figure>
     </div>
-</div>
+    <div class="box">
+      <h2>SOBRE NOSOTROS</h2>
+      <p>Supermercados Mercadona</p>
+      <p>Para mas informacion en nuestras redes sociales</p>
+      <p>Encuentranos en esta direccion</p>
+      <p style="background-color:beige"><a href="./direccion.html" target="_blank">Google Maps</a></p>
+    </div>
+    <div class="box">
+        <h2>Siguenos</h2>
+        <div class="red-social">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/mercadona/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f icon"></i>    </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/Mercadona"  target="_blank"><i class="fab fa-twitter icon"></i></a>
+            </li>
+            <li>
+              <a href="https://wa.link/kb48w4" target="_blank"><i class="fab fa-whatsapp icon"></i></a></li>
+            <li>
+              <a href="https://www.youtube.com/@mercadona" target="_blank"><i class="fab fa-instagram icon"></i></a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div class="group-2">
+    <small>&copy;2023 <b>Mercadona</b>-Derechos Reservados.</small>
+  </div>
+  </footer> 
 
-</div>
   
 <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

@@ -8,19 +8,7 @@ const on = function(element,event,selector,handler){
     })
 }
 
-// FrmData.addEventListener('submit', function(e) { 
-//     e.preventDefault(); 
-//     axios.post(url, { 
-//       usuario: usuario.value, 
-//       clave: clave.value 
-//     }) 
-//     .then(response => { 
-//       localStorage.setItem('token', response.data.token); 
-//       window.location.href = "home.html";
-//     }) 
-//     .catch(err => console.log(err)); 
-//     return false;
-//   });
+
   FrmData.addEventListener('submit', function(e) { 
     e.preventDefault(); 
     axios.post(url, { 
@@ -31,10 +19,11 @@ const on = function(element,event,selector,handler){
     .then(response => {
         localStorage.setItem('token',response.data.token)
         if(response.data.token){
-        window.location = "inicio.html";
+        window.location = "home.html";
         }
         else{
-            confirm('datos incorrectos')
+          swal("Error", "Datos incorrectos","error");
+            // confirm('datos incorrectos')
         }
     }
         )

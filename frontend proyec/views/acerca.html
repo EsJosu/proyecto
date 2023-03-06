@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercadona Panaderia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/estiloslac.css">
+    <link rel="stylesheet" href="../public/css/estiloslac.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> 
-    <link rel="shortcut icon" href="../imagenes/3.jpg">
+    <link rel="shortcut icon" href="../public/img/3.jpg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script>
 
@@ -29,34 +29,31 @@
 
 <!--NAVBAR PRINCIPAL-->
 <nav class="navbar navbar-expand-lg" style="background-color: #c0b40d;">
-  <a class="navbar-brand blanco" href="..home.html"><b>Mercadona &copy</b></a>
+  <a class="navbar-brand blanco" href="home.html"><b>Mercadona &copy</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 <div class="collapse navbar-collapse " id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="lacteos.html"><b>Categorias</b> <span class="sr-only">(current)</span></a>
+      </li>
+          
       <li class="nav-item ">
-        <a class="nav-link blanco" href="../home.html">Home</a>
+        <a class="nav-link" href="usuario.html">Usuario</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="persona.html">Persona</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="factura.html">Factura</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="reporte.html">Reporte</a>
       </li>
 
-            <li class="nav-item active">
-            <a class="nav-link blanco" href="#"><b>Categorias</b> <span class="sr-only">(current)</span></a>
-      </li>
-            <li class="nav-item">
-        <a class="nav-link blanco" href="#">Contacto</a>
-      </li>
-            
-      <li class="nav-item">
-        <a class="nav-link blanco" href="./login.html">Salir</a>
-      </li>
-          <li class="nav-item">
-        <a class="nav-link blanco" href="#"><i>Acerca de</i></a>
-      </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
+
   </div>
 </nav>
 <br><br>
@@ -74,46 +71,46 @@
 <br><br>
 <br><br>
 <br><br>
-<!-- pie de pagina -->
+<!-- PIE DE PAGINA -->
 <footer class ="pie-pagina">
-  <div class="group-1">
-    <div class="box">
-      <figure>
-        <a href="#">
-          <img src="../imagenes/3.jpg" height="220" alt="">
-        </a>
-      </figure>
+    <div class="group-1">
+      <div class="box">
+        <figure>
+          <a href="#">
+            <img src="../public/img/3.jpg" height="220" alt="">
+          </a>
+        </figure>
+      </div>
+      <div class="box">
+        <h2>SOBRE NOSOTROS</h2>
+        <p>Supermercados Mercadona</p>
+        <p>Para mas informacion en nuestras redes sociales</p>
+        <p>Encuentranos en esta direccion</p>
+        <p style="background-color:beige"><a href="./direccion.html" target="_blank">Google Maps</a></p>
+      </div>
+      <div class="box">
+          <h2>Siguenos</h2>
+          <div class="red-social">
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/mercadona/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f icon"></i>    </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/Mercadona"  target="_blank"><i class="fab fa-twitter icon"></i></a>
+              </li>
+              <li>
+                <a href="https://wa.link/kb48w4" target="_blank"><i class="fab fa-whatsapp icon"></i></a></li>
+              <li>
+                <a href="https://www.youtube.com/@mercadona" target="_blank"><i class="fab fa-instagram icon"></i></a></li>
+            </ul>
+          </div>
+      </div>
     </div>
-    <div class="box">
-      <h2>SOBRE NOSOTROS</h2>
-      <p>Supermercados Mercadona</p>
-      <p>Para mas informacion en nuestras redes sociales</p>
-      <p>Encuentranos en esta direccion</p>
-      <p style="background-color:beige"><a href="./direccion.html" target="_blank">Google Maps</a></p>
+    <div class="group-2">
+      <small>&copy;2023 <b>Mercadona</b>-Derechos Reservados.</small>
     </div>
-    <div class="box">
-        <h2>Siguenos</h2>
-        <div class="red-social">
-          <ul>
-            <li>
-              <a href="" target="_blank"><i class="fab fa-facebook-f icon"></i>    </a>
-            </li>
-            <li>
-              <a href=""  target="_blank"><i class="fab fa-twitter icon"></i></a>
-            </li>
-            <li>
-              <a href="" target="_blank"><i class="fab fa-whatsapp icon"></i></a></li>
-            <li>
-              <a href="" target="_blank"><i class="fab fa-instagram icon"></i></a></li>
-          </ul>
-        </div>
-    </div>
-  </div>
-  <div class="group-2">
-    <small>&copy;2023 <b>Mercadona</b>-Derechos Reservados.</small>
-  </div>
-  </footer> 
-
+    </footer> 
+  
   <script src="./js_frontend/panaderia.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
